@@ -1,10 +1,18 @@
 en:
   general:
     logo: MEMBER MANAGER SYSTEM
+    logo_admin: MEMBER MANAGER SYSTEM ADMIN
     title: Member Manager System
     footer: Copyright by Tran Huy Hoang - Framgia Company
     menu_item_home: Home
     menu_item_teams: Teams
+    menu_item_users: Users
+    menu_item_positions: Positions
+    menu_item_projects: Projects
+    menu_item_skills: Skills
     menu_item_about: About Us
     menu_item_contact: Contact Us
     login: Login
+    logout: logout
+    profile: Profile
+    setting: Setting
