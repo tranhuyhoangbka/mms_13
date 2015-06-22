@@ -1,0 +1,10 @@
+<tr class="position">
+  <td><%= position.id %></td>
+  <td><%= position.name %></td>
+  <td><%= position.abbreviation %></td>
+  <td><%= link_to t("general.edit"), edit_admin_position_path(position) %></td>
+  <td>
+    <%= link_to t("general.delete"), [:admin, position], method: :delete, data: 
+                                     {confirm: t("general.confirm_delete")} %>
+  </td>
+</tr>

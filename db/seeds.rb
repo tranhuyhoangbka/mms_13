@@ -4,3 +4,11 @@ User.create!(name: 'Admin',
   password_confirmation: '12345678',
   birthday: DateTime.new(2015, 1, 1),
   role: 'admin')
+
+Position.create![
+  {name: "Team Leader", abbreviation: "leader"},
+  {name: "Project Manager", abbreviation: "manager"},
+  {name: "Developer", abbreviation: "dev"},
+  {name: "Tester", abbreviation: "tester"},
+  {name: "Designer", abbreviation: "designer"},
+  {name: "Bridge Engineer", abbreviation: "bridge"}]

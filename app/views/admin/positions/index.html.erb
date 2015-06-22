@@ -1,0 +1,19 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="create_position col-md-4">
+    <h2><%= t "position.title_index" %></h2>
+    <%= render "form" %>
+  </div>  
+  <div class="clearfix"></div>
+  <table class="table table-striped">
+    <tr>
+      <th><%= t "general.id" %></th>
+      <th><%= t "general.name" %></th>
+      <th><%= t "position.abbreviation" %></th>
+      <th colspan="2"></th>
+    </tr>
+    <div class="positions">
+      <%= render @positions %>
+    </div>    
+  </table>
+  <%= will_paginate %>
+</div>

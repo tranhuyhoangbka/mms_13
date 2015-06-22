@@ -1,3 +1,5 @@
+general:
+  per_page: 10
 models:
   position:
     max_length_name: 150
