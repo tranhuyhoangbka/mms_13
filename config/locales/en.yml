@@ -16,3 +16,18 @@ en:
     logout: Logout
     profile: Profile
     setting: Setting
+    create: Create
+    update: Update
+    id: ID
+    name: Name
+    edit: Edit
+    delete: Delete
+    confirm_delete: Are you sure?
+  position:
+    title_index: Create Position
+    title_edit: Edit Position
+    abbreviation: Abbreviation
+    create_success: Position is create!
+    create_not_success: Creating Position not success !
+    update_success: Position is updated !
+

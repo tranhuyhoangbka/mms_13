@@ -4,4 +4,9 @@ Rails.application.routes.draw do
 
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
+
+  namespace :admin do
+    root "static_pages#home"
+    resources :positions, except: [:show, :new]
+  end
 end
