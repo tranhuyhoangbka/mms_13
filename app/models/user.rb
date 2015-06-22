@@ -10,5 +10,9 @@ class User < ActiveRecord::Base
   belongs_to :team
 
   validates :name, presence: true
-  validates :birthday, presence: true  
+  validates :birthday, presence: true
+  
+  Settings.models.user.roles.each do |role_user|
+    define_method("is_#{role_user}?") {role == role_user}
+  end
 end

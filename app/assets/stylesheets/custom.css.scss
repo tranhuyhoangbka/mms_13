@@ -95,13 +95,19 @@ input {
 }
 
 .footer{
-  background: #212020;
-  opacity: 0.7;
-  position: absolute;
-  bottom: 2px;
-  width: 100%;
+  margin-top: 330px;
   p {
+    opacity: 0.7;
     color: #fff;
+    background: #212020;
     margin-top:3px;
   }
+}
+
+#user_remember_me {
+  width: 10px;
+}
+
+.field select {
+  width: 130px;
 }
