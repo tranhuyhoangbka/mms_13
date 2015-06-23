@@ -23,6 +23,9 @@ en:
     edit: Edit
     delete: Delete
     confirm_delete: Are you sure?
+    error: error
+    error_message: The form contains
+    not_admin: Sorry! you isn't Adminstrator
   position:
     title_index: Create Position
     title_edit: Edit Position
@@ -30,4 +33,14 @@ en:
     create_success: Position is create!
     create_not_success: Creating Position not success !
     update_success: Position is updated !
+  skill:
+    create_success: Skill is created!
+    create_fail: Creating Skill not success!
+    update_success: Skill is updated!
+    update_fail: updatting Skill not success!
+    delete_success: Skill is deleted!
+    create_skill: Create Skill
+    all_skills: All Skills
+    no_skill: No skills is searched!
+    title_edit: Edit Skill
 
