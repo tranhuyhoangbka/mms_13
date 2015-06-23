@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :positions, except: [:show, :new]
     resources :skills, except: [:show, :new]
     resources :teams, except: [:index, :show, :destroy]
+    resources :users, except: [:index, :show, :destroy]
   end
 end

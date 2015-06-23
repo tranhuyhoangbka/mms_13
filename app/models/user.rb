@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :birthday, presence: true
+
+  mount_uploader :avatar, ImageUploader
   
   scope :no_team_users, ->{where team_id: nil}
   scope :normal, ->{where role: Settings.models.user.roles[1]}
