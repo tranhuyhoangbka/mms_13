@@ -1,0 +1,27 @@
+<%= form_for [:admin, @team] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="field">
+    <%= f.label t "general.name" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label t "general.description" %>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  
+  <div class="row">
+    <h2><%= t "team.no_team_list" %></h2>
+    <%= render "user_list", f: f, source: @no_team_users %>
+  </div> 
+
+  <div class="row">
+    <h2><%= t "team.users_of_team" %></h2>
+    <%= render "user_list", f: f, source: @users_of_team %>
+  </div>  
+
+  <div class="control">
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+<% end %>
