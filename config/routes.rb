@@ -1,7 +1,7 @@
 Rails.application.routes.draw do  
   devise_for :users
-  root "static_pages#home"
 
+  root "static_pages#home"
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
 
@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :skills, except: [:show, :new]
     resources :teams, except: [:index, :show, :destroy]
   end
+
+  resources :users, only: :show
 end
