@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: :show
+  resources :teams, only: [:index, :show]
 end
