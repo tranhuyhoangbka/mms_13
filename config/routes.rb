@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   devise_for :users
   root "static_pages#home"
 
@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
     resources :positions, except: [:show, :new]
+    resources :skills, except: [:show, :new]
   end
 end

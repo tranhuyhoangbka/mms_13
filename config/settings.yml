@@ -5,7 +5,7 @@ models:
     max_length_name: 150
     max_length_abbreviation: 50
   skill_user:  
-    level_inclusion: 1..10
+    level_inclusion: 1..10  
   user:
     roles:
       - admin
