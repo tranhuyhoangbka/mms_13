@@ -5,19 +5,20 @@ User.create!(name: 'Admin',
   birthday: DateTime.new(2015, 1, 1),
   role: 'admin')
 
-Position.create![
+Position.create!([
   {name: "Team Leader", abbreviation: "leader"},
   {name: "Project Manager", abbreviation: "manager"},
   {name: "Developer", abbreviation: "dev"},
   {name: "Tester", abbreviation: "tester"},
   {name: "Designer", abbreviation: "designer"},
-  {name: "Bridge Engineer", abbreviation: "bridge"}]
+  {name: "Bridge Engineer", abbreviation: "bridge"}])
 
 10.times do
-  User.create!
+  User.create!(
     name: Faker::Name.first_name,
     email: Faker::Internet.safe_email,
     password: "123456789",
     password_confirmation: "123456789",
-    birthday: "1992-02-06"    
-end  
+    birthday: DateTime.new(2015, 1, 1),
+    role: "normal")
+end
