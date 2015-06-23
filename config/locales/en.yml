@@ -26,6 +26,7 @@ en:
     error: error
     error_message: The form contains
     not_admin: Sorry! you isn't Adminstrator
+    description: description
   position:
     title_index: Create Position
     title_edit: Edit Position
@@ -43,4 +44,11 @@ en:
     all_skills: All Skills
     no_skill: No skills is searched!
     title_edit: Edit Skill
+  team:
+    title_new: Create Team
+    create_success: Team is created !
+    update_success: Updating team is success !
+    title_edit: Edit Team
+    no_team_list: No Team User List
+    users_of_team: User List Of Team
 

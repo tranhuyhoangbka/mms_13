@@ -1,0 +1,18 @@
+<h1><%= t "team.title_new" %></h1>
+<div class="col-md-6 col-md-offset-3">
+  <%= form_for [:admin, @team] do |f| %>
+    <div class="field">
+      <%= f.label t "general.name" %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label t "general.description" %><br>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+
+    <div class="controls">
+      <%= f.submit t("general.create") ,class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>
