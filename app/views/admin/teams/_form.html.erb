@@ -14,12 +14,12 @@
   <div class="row">
     <h2><%= t "team.no_team_list" %></h2>
     <%= render "user_list", f: f, source: @no_team_users %>
-  </div> 
+  </div>
 
   <div class="row">
     <h2><%= t "team.users_of_team" %></h2>
     <%= render "user_list", f: f, source: @users_of_team %>
-  </div>  
+  </div>
 
   <div class="control">
     <%= f.submit class: "btn btn-success" %>

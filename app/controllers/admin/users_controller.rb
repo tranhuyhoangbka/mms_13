@@ -1,6 +1,15 @@
 class Admin::UsersController < ApplicationController
   before_action :admin_user
-  before_action :set_user, except: [:new, :create]  
+  before_action :set_user, except: [:index, :new, :create]  
+  
+  def index
+    @q = User.normal.ransack params[:q]
+    @users = @q.result.paginate page: params[:page], 
+                                per_page: Settings.general.per_page
+  end
+
+  def show    
+  end
 
   def new
     @user = User.new
@@ -11,7 +20,7 @@ class Admin::UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t "user.create_success"
-      redirect_to root_url
+      redirect_to admin_user_path(@user)
     else
       render :new
     end
@@ -24,10 +33,16 @@ class Admin::UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = t "user.update_success"
-      redirect_to root_url
+      redirect_to admin_user_path(@user)
     else
-      render "edit"
+      render :edit
     end
+  end
+
+  def destroy
+    @user.destroy
+    flash[:success] = t "user.delete_success"
+    redirect_to admin_users_path
   end
 
   private

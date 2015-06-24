@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "ransack"
 gem "rails_config"
 gem "devise"
 gem "rails",                "4.2.1"

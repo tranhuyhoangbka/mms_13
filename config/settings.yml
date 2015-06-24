@@ -1,5 +1,6 @@
 general:
   per_page: 10
+  size_image: 60x60
 models:
   position:
     max_length_name: 150
