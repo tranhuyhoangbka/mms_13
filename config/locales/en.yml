@@ -45,6 +45,8 @@ en:
     no_skill: No skills is searched!
     title_edit: Edit Skill
   team:
+    team_list: Team list
+    user_list: User list
     title_new: Create Team
     create_success: Team is created !
     update_success: Updating team is success !
