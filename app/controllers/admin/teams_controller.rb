@@ -22,7 +22,7 @@ class Admin::TeamsController < ApplicationController
     @team = Team.new team_params
     if @team.save
       flash[:success] = t "team.create_success"
-      redirect_to admin_teams_url
+      redirect_to admin_team_path(@team)
     else
       render :new
     end
@@ -31,12 +31,15 @@ class Admin::TeamsController < ApplicationController
   def edit
     @users_of_team = @team.users
     @no_team_users = User.normal.no_team_users
+    @leader = @team.leader
   end
 
   def update
-    if @team.update_attributes team_params
-      flash[:success] = t "team.update_success"
-      redirect_to admin_team_path(@team)
+    if @team.update_attributes team_params      
+      respond_to do |format|
+        format.html {redirect_to admin_team_path(@team), notice: t("team.update_success")}
+        format.js
+      end
     else
       render :edit
     end
@@ -50,7 +53,7 @@ class Admin::TeamsController < ApplicationController
 
   private
   def team_params
-    params.require(:team).permit :name, :description, :team_leader, user_ids: []
+    params.require(:team).permit :name, :description, :leader_id, user_ids: []
   end
 
   def set_team
