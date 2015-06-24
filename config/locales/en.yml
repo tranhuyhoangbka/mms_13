@@ -36,6 +36,7 @@ en:
     create_success: Position is create!
     create_not_success: Creating Position not success !
     update_success: Position is updated !
+    position: Position
   skill:
     create_success: Skill is created!
     create_fail: Creating Skill not success!
@@ -56,6 +57,7 @@ en:
     no_team_list: No Team User List
     users_of_team: User List Of Team
     title_index: All Teams
+    team: Team
   user:
     create_success: User is created !
     update_success: User is updated !
@@ -71,3 +73,8 @@ en:
     destroy_success: Team is deleted !
     team: Team
     introduction: Introduction of
+    delete_success: User is deleted !
+    all_users: All Users
+    add_user: Add User
+    placeholder_search: Enter key search
+    joined_project: Joined Projects
