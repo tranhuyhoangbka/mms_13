@@ -11,6 +11,11 @@
       <%= f.text_field :description, class: "form-control" %>
     </div>
 
+    <div class="field">
+      <%= f.label :leader_id, t("team.leader") %><br>
+      <%= f.select :leader_id, @users %>
+    </div>
+
     <div class="controls">
       <%= f.submit t("general.create") ,class: "btn btn-success" %>
     </div>

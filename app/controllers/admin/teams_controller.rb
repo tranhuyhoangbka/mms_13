@@ -12,6 +12,7 @@ class Admin::TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @users = User.normal.pluck :name, :id
   end
 
   def create
