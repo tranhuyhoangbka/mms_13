@@ -20,7 +20,7 @@ Position.create!([
     password: "123456789",
     password_confirmation: "123456789",
     birthday: DateTime.new(2015, 1, 1),
-    role: "normal")
+    role: "user")
 end
 
 10.times do

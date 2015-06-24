@@ -4,17 +4,7 @@
   <div class="field">
     <%= f.label t "user.email" %>
     <%= f.email_field :email, autofocus: true, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label t "user.password" %>
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, t("user.confirmation") %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-  </div>
+  </div>  
 
   <div class="field">
     <%= f.label :name, t("user.fullname") %>

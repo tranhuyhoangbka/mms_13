@@ -1,0 +1,4 @@
+<%= div_for user, class: "col-md-3" do %>  
+  <%= link_to image_tag(user.avatar.url, size: Settings.general.size_image), user %>
+  <%= link_to user.name, admin_user_path(user) %><br>
+<% end %>
