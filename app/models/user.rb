@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_one :leading_team, foreign_key: "leader_id"
   belongs_to :position
   belongs_to :team
+  has_one :leader, foreign_key: "leader_id"
   
   accepts_nested_attributes_for :skill_users, allow_destroy: true
 

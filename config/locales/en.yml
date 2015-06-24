@@ -33,6 +33,7 @@ en:
     submit: Submit
     download: Download
     csv: CSV
+    save : Save
   position:
     title_index: Create Position
     title_edit: Edit Position
@@ -94,3 +95,9 @@ en:
     history: History
     time: Time
     content: Content
+  project:
+    project_list: Project list
+    project_updated: Project updated
+    project_create: Created project
+    project_create: Create project
+    project_need_atleast: Project need atleast a member

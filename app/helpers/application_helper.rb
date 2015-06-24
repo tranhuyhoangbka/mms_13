@@ -7,7 +7,7 @@ module ApplicationHelper
     if title.empty?
       t "general.title"
     else
-      title + ' | ' + (t "general.title")
+      "#{title} | #{t "general.title"}"
     end
   end
 end
