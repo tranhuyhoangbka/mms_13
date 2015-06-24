@@ -12,6 +12,7 @@ class Admin::TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @users = User.normal.pluck :name, :id
   end
 
   def create
@@ -46,7 +47,7 @@ class Admin::TeamsController < ApplicationController
 
   private
   def team_params
-    params.require(:team).permit :name, :description, :team_leader, user_ids: []
+    params.require(:team).permit :name, :description, :leader_id, user_ids: []
   end
 
   def set_team
