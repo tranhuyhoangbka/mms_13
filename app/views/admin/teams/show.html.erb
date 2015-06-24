@@ -1,0 +1,30 @@
+<div class="col-md-8 col-md-offset-2">
+  <h2 class="text-center text-warning">
+    <%= @team.name %> <%= t "team.team" %>
+  </h2>  
+  <div class="description-team">
+    <h3 class="text-warning">
+      <%= t "team.introduction" %> <%= @team.name %> <%= t "team.team" %>
+    </h3>
+    <p class="well"><%= @team.description %></p>
+  </div>
+  <div class="members">    
+    <table class="table table-striped">
+      <tr>
+        <th><%= t "general.stt" %></th>
+        <th><%= t "general.name" %></th>
+        <th><%= t "general.email" %></th>
+        <th><%= t "user.personal_photo" %></th>
+      </tr>
+      <% @users.each_with_index do |user, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to user.name, "#" %></td>
+          <td><%= user.email %></td>
+          <td><%= image_tag user.avatar.url, class: "img-responsive", size: "70x70" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+

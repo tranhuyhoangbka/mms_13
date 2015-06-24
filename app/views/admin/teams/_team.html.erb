@@ -1,0 +1,11 @@
+<tr class="team">
+  <th><%= team.id %></th>
+  <th><%= link_to team.name, admin_team_path(team) %></th>
+  <th>
+    <%= link_to "", edit_admin_team_path(team), class: "glyphicon glyphicon-edit" %>
+  </th>
+  <th>
+    <%= link_to "", admin_team_path(team), data: {confirm: t("general.confirm_delete")},
+                    method: :delete, class: "glyphicon glyphicon-trash" %>
+  </th>
+</tr>

@@ -27,6 +27,8 @@ en:
     error_message: The form contains
     not_admin: Sorry! you isn't Adminstrator
     description: description
+    stt: STT
+    email: Email
   position:
     title_index: Create Position
     title_edit: Edit Position
@@ -53,6 +55,7 @@ en:
     title_edit: Edit Team
     no_team_list: No Team User List
     users_of_team: User List Of Team
+    title_index: All Teams
   user:
     create_success: User is created !
     update_success: User is updated !
@@ -65,3 +68,6 @@ en:
     birthday: birthday
     position: position
     personal_photo: Personal Photo
+    destroy_success: Team is deleted !
+    team: Team
+    introduction: Introduction of
