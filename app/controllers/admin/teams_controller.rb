@@ -1,7 +1,15 @@
 class Admin::TeamsController < ApplicationController
   before_action :admin_user
-  before_action :set_team, except: [:new, :create]
+  before_action :set_team, except: [:index, :new, :create]
   
+  def index
+    @teams = Team.paginate page: params[:page], per_page: Settings.general.per_page
+  end
+
+  def show
+    @users = @team.users
+  end
+
   def new
     @team = Team.new
   end
@@ -10,7 +18,7 @@ class Admin::TeamsController < ApplicationController
     @team = Team.new team_params
     if @team.save
       flash[:success] = t "team.create_success"
-      redirect_to root_url
+      redirect_to admin_teams_url
     else
       render :new
     end
@@ -24,10 +32,16 @@ class Admin::TeamsController < ApplicationController
   def update
     if @team.update_attributes team_params
       flash[:success] = t "team.update_success"
-      redirect_to root_url
+      redirect_to admin_team_path(@team)
     else
-      render "edit"
+      render :edit
     end
+  end
+
+  def destroy
+    @team.destroy
+    flash[:success] = t "team.destroy_success"
+    redirect_to admin_teams_url
   end
 
   private
