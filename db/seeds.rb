@@ -22,3 +22,9 @@ Position.create!([
     birthday: DateTime.new(2015, 1, 1),
     role: "normal")
 end
+
+10.times do
+  Team.create!(
+    name: Faker::Team.name,
+    description: Faker::Lorem.paragraph(3))
+end
