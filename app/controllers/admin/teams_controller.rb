@@ -7,11 +7,12 @@ class Admin::TeamsController < ApplicationController
   end
 
   def show
-    @users = @team.users
+    @users = @team.users    
   end
 
   def new
     @team = Team.new
+    @users = User.normal.pluck :name, :id
   end
 
   def create
