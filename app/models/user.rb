@@ -7,10 +7,12 @@ class User < ActiveRecord::Base
   has_many :skills, through: :skill_users
   has_many :projects, through: :project_users
   belongs_to :position
-  belongs_to :team
+  belongs_to :team  
 
   validates :name, presence: true
   validates :birthday, presence: true
+
+  accepts_nested_attributes_for :skill_users, allow_destroy: true
 
   mount_uploader :avatar, ImageUploader
   
