@@ -1,0 +1,15 @@
+<tr>
+  <td><%= activity.created_at.strftime("At %I:%M %p on %d/%m/%Y") %></td>
+  <td>
+    <%= activity.description %>
+    <% if activity.get_object.present? && activity.is_not_delete_action? %>
+      <%= link_to activity.get_object.name, [:admin, activity.get_object] %>
+    <% else %>
+      <%= t("activity.with_id") %> <%= activity.target_id %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "", admin_activity_path(activity), method: :delete, 
+        data: {confirm: t("general.confirm_delete")}, class: "glyphicon glyphicon-trash" %>
+  </td>
+</tr>

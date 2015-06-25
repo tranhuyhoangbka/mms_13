@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :skills, except: [:show, :new]
     resources :users
     resources :teams
+    resources :activities, only: [:index, :destroy]
   end
 
   resources :users, only: [:show, :update] do
