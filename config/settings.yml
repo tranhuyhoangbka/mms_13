@@ -1,6 +1,10 @@
 general:
   per_page: 10
   size_image: 60x60
+  actions:
+    create: Create
+    update: Update
+    delete: Delete
 models:
   position:
     max_length_name: 150
@@ -17,5 +21,5 @@ models:
       - Legend
   user:
     roles:
-      - admin
-      - user
+      admin: admin
+      user: user
