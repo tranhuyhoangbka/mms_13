@@ -6,7 +6,15 @@ models:
     max_length_name: 150
     max_length_abbreviation: 50
   skill_user:  
-    level_inclusion: 1..10  
+    levels:
+      - Beginner
+      - Amateur
+      - Normal
+      - High
+      - Professional
+      - Top Coder
+      - Super
+      - Legend
   user:
     roles:
       - admin

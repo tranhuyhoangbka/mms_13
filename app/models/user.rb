@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :projects, through: :project_users
   belongs_to :position
   belongs_to :team
+  
+  accepts_nested_attributes_for :skill_users, allow_destroy: true
 
   validates :name, presence: true
   validates :birthday, presence: true

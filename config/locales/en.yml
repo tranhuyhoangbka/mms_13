@@ -29,6 +29,7 @@ en:
     description: description
     stt: STT
     email: Email
+    submit: Submit
   position:
     title_index: Create Position
     title_edit: Edit Position
@@ -47,6 +48,9 @@ en:
     all_skills: All Skills
     no_skill: No skills is searched!
     title_edit: Edit Skill
+    level: Level
+    name: Skill Name
+    experience: Experience Year
   team:
     team_list: Team list
     user_list: User list
@@ -61,6 +65,7 @@ en:
   user:
     create_success: User is created !
     update_success: User is updated !
+    update_fail: User add Skill Fail !
     delete_success: User is deleted !
     title_new: Create User
     title_edit: Edit User
@@ -79,3 +84,4 @@ en:
     add_user: Add User
     placeholder_search: Enter key search
     joined_project: Joined Projects
+    add_skill: Add Skills

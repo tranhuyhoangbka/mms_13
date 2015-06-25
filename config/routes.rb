@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :teams
   end
 
-  resources :users, only: :show
+  resources :users, only: [:show, :update] do
+    resources :skill_users, only: :show
+    match "/add_skill", to: "skill_users#show", via: :get
+  end  
   resources :teams, only: [:index, :show]
 end

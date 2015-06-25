@@ -1,0 +1,20 @@
+<%= form_for @user, remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <table class="table">
+    <tr>
+      <th></th>
+      <th><%= t "skill.name" %></th>
+      <th><%= t "skill.level" %></th>
+      <th><%= t "skill.experience" %></th>
+    </tr>
+    <%= f.fields_for :skill_users do |builder| %>
+      <tr>
+        <td><%= builder.check_box :_destroy %></td>        
+        <td><%= builder.object.skill.name %></td>
+        <td><%= builder.select :level, Settings.models.skill_user.levels %></td>
+        <td><%= builder.number_field :experience_year %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= f.submit t("general.submit"), class: "btn btn-success" %>
+<% end %>
