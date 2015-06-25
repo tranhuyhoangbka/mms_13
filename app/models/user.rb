@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   after_destroy :log_delete
 
   scope :no_team_users, ->{where team_id: nil}
-  scope :normal, ->{where role: Settings.models.user.roles.admin}
+  scope :normal, ->{where role: Settings.models.user.roles.user}
 
   Settings.models.user.roles.each do |role_key, role_value|
     define_method("is_#{role_key}?") {role == role_value}
