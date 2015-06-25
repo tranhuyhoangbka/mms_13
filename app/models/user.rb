@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base  
+  include ActivityLog
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
@@ -16,10 +18,14 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, ImageUploader
   
-  scope :no_team_users, ->{where team_id: nil}
-  scope :normal, ->{where role: Settings.models.user.roles[1]}
+  after_create :log_create
+  after_update :log_update
+  after_destroy :log_delete
 
-  Settings.models.user.roles.each do |role_user|
-    define_method("is_#{role_user}?") {role == role_user}
+  scope :no_team_users, ->{where team_id: nil}
+  scope :normal, ->{where role: Settings.models.user.roles.admin}
+
+  Settings.models.user.roles.each do |role_key, role_value|
+    define_method("is_#{role_key}?") {role == role_value}
   end
 end
