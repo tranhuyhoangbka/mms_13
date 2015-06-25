@@ -12,6 +12,7 @@ en:
     menu_item_skills: Skills
     menu_item_about: About Us
     menu_item_contact: Contact Us
+    menu_item_log: Log Activity
     login: Login
     logout: Logout
     profile: Profile
@@ -85,3 +86,9 @@ en:
     placeholder_search: Enter key search
     joined_project: Joined Projects
     add_skill: Add Skills
+  activity:
+    destroy_success: Activity is deleted!
+    with_id: With ID
+    history: History
+    time: Time
+    content: Content

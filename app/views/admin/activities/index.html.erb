@@ -1,0 +1,14 @@
+<h2><%= t "activity.history" %></h2>
+<div class="col-md-8 col-md-offset-2">
+  <table class="table table-striped">
+    <tr>
+      <th><%= t "activity.time" %></th>
+      <th><%= t "activity.content" %></th>
+      <th></th>
+    </tr>
+    <div class="activities">
+      <%= render @activities %>
+    </div>
+  </table>
+  <%= will_paginate %>
+</div>
