@@ -3,6 +3,7 @@ class Team < ActiveRecord::Base
 
   has_many :users
   has_many :projects, dependent: :destroy
+  belongs_to :leader, class_name: "User"
 
   validates :name, presence: true
   validates :description, presence: true
@@ -10,4 +11,13 @@ class Team < ActiveRecord::Base
   after_create :log_create
   after_update :log_update
   after_destroy :log_delete
+
+  def to_csv
+    CSV.generate do |csv|
+      csv << Settings.csv.team_column
+      csv << [name, description, leader.name]
+      csv << Settings.csv.member
+      csv << users.pluck(:name)
+    end
+  end
 end

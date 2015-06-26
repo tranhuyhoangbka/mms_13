@@ -23,3 +23,17 @@ models:
     roles:
       admin: admin
       user: user
+csv:
+  member: 
+    - Members
+  skill: 
+    - Skills
+  user_column:
+    - Name
+    - Email
+    - Birthday
+    - Position
+  team_column:
+    - Name
+    - Description
+    - Leader

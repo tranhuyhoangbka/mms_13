@@ -1,7 +1,8 @@
 <div class="col-md-8 col-md-offset-2">
   <h2 class="text-center text-warning">
     <%= @team.name %> <%= t "team.team" %>
-  </h2>  
+  </h2>
+  <%= t "general.download" %> <%= link_to t("general.csv"), admin_team_path(format: :csv) %>
   <div class="description-team">
     <h3 class="text-warning">
       <%= t "team.introduction" %> <%= @team.name %> <%= t "team.team" %>

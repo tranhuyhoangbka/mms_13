@@ -8,6 +8,10 @@ class Admin::TeamsController < ApplicationController
 
   def show
     @users = @team.users
+    respond_to do |format|
+      format.html
+      format.csv {send_data @team.to_csv}
+    end
   end
 
   def new
