@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
   has_many :projects, through: :project_users
+  has_one :leading_team, foreign_key: "leader_id"
   belongs_to :position
   belongs_to :team
   
@@ -27,5 +28,14 @@ class User < ActiveRecord::Base
 
   Settings.models.user.roles.each do |role_key, role_value|
     define_method("is_#{role_key}?") {role == role_value}
+  end
+
+  def to_csv
+    CSV.generate do |csv|
+      csv << Settings.csv.user_column
+      csv << [name, email, birthday, position.name]
+      csv << Settings.csv.skill
+      csv << self.skills.pluck(:name)
+    end
   end
 end

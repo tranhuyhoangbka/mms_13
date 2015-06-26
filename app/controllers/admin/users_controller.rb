@@ -8,7 +8,11 @@ class Admin::UsersController < ApplicationController
                                 per_page: Settings.general.per_page
   end
 
-  def show    
+  def show
+    respond_to do |format|
+      format.html
+      format.csv {send_data @user.to_csv}
+    end
   end
 
   def new

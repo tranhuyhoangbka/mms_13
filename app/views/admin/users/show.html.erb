@@ -6,6 +6,7 @@
   <%= link_to t("general.delete"), admin_user_path(@user), method: :delete, 
       data: {confirm: t("general.confirm_delete")}, class: "btn btn-danger" %>
   <div class="user_info well">
+    <%= t "general.download" %> <%= link_to t("general.csv"), admin_user_path(format: :csv) %>
     <table class="table table-striped">
       <tr>
         <th><%= t "user.email" %></th>
