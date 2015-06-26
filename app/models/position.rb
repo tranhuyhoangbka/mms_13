@@ -1,5 +1,6 @@
 class Position < ActiveRecord::Base
   include ActivityLog
+  extend ExportCsv
 
   has_many :users, dependent: :destroy
 

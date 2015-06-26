@@ -5,7 +5,11 @@ class Admin::SkillsController < ApplicationController
   def index
     @skills = Skill.paginate page: params[:page], per_page: 
                                    Settings.general.per_page
-    @skill = Skill.new                                   
+    @skill = Skill.new
+    respond_to do |format|
+      format.html
+      format.csv {send_data @skills.as_csv}
+    end
   end  
 
   def create

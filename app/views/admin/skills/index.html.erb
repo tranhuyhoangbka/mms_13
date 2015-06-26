@@ -6,6 +6,8 @@
 <div class="skills col-md-8 col-md-offset-2">
   <h2><%= t "skill.all_skills" %></h2>
   <% if @skills.any? %>
+    <%= t "general.download" %>  
+    <%= link_to t("general.csv"), admin_skills_path(format: :csv) %>
     <table class="table table-striped">
       <tr>
         <th><%= t "general.id" %></th>

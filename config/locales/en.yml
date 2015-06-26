@@ -31,6 +31,8 @@ en:
     stt: STT
     email: Email
     submit: Submit
+    download: Download
+    csv: CSV
   position:
     title_index: Create Position
     title_edit: Edit Position
