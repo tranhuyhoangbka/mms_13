@@ -1,6 +1,8 @@
 <div class="col-md-8 col-md-offset-2">
   <div class="create_position col-md-4">
     <h2><%= t "position.title_index" %></h2>
+    <%= t "general.download" %>: 
+    <%= link_to t("general.csv"), admin_positions_path(format: :csv) %>
     <%= render "form" %>
   </div>  
   <div class="clearfix"></div>

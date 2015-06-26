@@ -5,6 +5,10 @@ class Admin::PositionsController < ApplicationController
     @positions = Position.paginate page: params[:page], 
                                    per_page: Settings.general.per_page
     @position = Position.new
+    respond_to do |format|    
+      format.html
+      format.csv {send_data @positions.to_csv}
+    end
   end
 
   def create
