@@ -1,0 +1,12 @@
+<h1>Hi <%= @user["name"] %> !</h1>
+<p>
+  We email to you to notice you that: you have been created a account
+  on Member Manager System.
+</p>
+<div>
+  <strong>Information account of you is: </strong>
+  <p>Email: <%= @user["email"] %></p>
+  <p>Password: <%= @user["password"] %></p>
+  <p>Now, you can sign in system to working. Please access: 
+  <%= new_user_session_url host: "localhost:3000" %></p>
+</div>
