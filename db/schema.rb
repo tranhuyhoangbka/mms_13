@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625041730) do
+ActiveRecord::Schema.define(version: 20150626084829) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "action"
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20150625041730) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "team_id"
-    t.integer  "project_manager"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "leader_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "projects", ["team_id"], name: "index_projects_on_team_id"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20150625041730) do
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "leader_id"
+    t.integer  "team_leader"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

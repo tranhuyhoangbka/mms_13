@@ -1,0 +1,30 @@
+<%= provide :title, @project.name %>
+<h1><%= @project.name %></h1>
+<div class="col-md-4">
+  <div id="content">
+    <ul class="list_group">
+      <li class="list-group-item list-group-item-info">
+        Abbreviation : <strong><%= @project.abbreviation %></strong>
+      </li>
+      <li class="list-group-item list-group-item-info">
+        Start date : <strong><%= @project.start_date %></strong>
+      </li>
+      <li class="list-group-item list-group-item-info">
+        End date : 
+        <% if @project.end_date.nil? %>
+          <strong>In progress</strong>
+        <% else %>
+          <strong><%= @project.end_date %></strong>
+        <% end %>
+      </li>
+      <li class="list-group-item list-group-item-info">
+        Team : <strong><%= @team.name %></strong>
+      </li>
+      <li class="list-group-item list-group-item-info">
+        Leader : <strong><%= @user.name %></strong>
+      </li>
+      <%= link_to "Edit", edit_admin_project_path(@project),
+                          class: "btn btn-warning" %>
+    </ul>
+  </div>
+</div>

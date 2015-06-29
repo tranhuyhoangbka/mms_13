@@ -6,7 +6,7 @@
     <% @teams.each do |team| %>
       <li class="list-group-item list-group-item-info">
         <b><%= link_to team.name, team_path(team) %></b> | 
-        <%= team.users.count %> member(s)
+        <%= pluralize(team.users.count, "member", "members") %>
       </li>
     <% end %>
   </ul>

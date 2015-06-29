@@ -9,9 +9,10 @@ Rails.application.routes.draw do
     root "static_pages#home"
     resources :positions, except: [:show, :new]
     resources :skills, except: [:show, :new]
-    resources :users
-    resources :teams
     resources :activities, only: [:index, :destroy]
+    resources :teams
+    resources :users
+    resources :projects
   end
 
   resources :users, only: [:show, :update] do

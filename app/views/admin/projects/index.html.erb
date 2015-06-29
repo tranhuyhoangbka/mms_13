@@ -1,0 +1,14 @@
+<div class="col-md-8 col-md-offset-2">  
+  <h1><%= t "project.project_list" %></h1>  
+  <%= link_to t("project.project_create"), new_admin_project_path, class: "btn btn-success btn-lg" %>
+  <div class="projects"> 
+    <%= search_form_for [:admin, @q] do |f| %>  
+      <%= f.label :team_name_cont %>
+      <%= f.search_field :team_name_cont, class: "form-control", 
+                                          placeholder: t("user.placeholder_search") %>
+      <%= f.submit class: "btn btn-success" %>
+    <% end %>   
+    <%= render @projects %>
+    <%= will_paginate %>
+  </div>
+</div>
