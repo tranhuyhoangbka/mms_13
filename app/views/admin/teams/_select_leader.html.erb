@@ -1,0 +1,14 @@
+<div class="select_leader">
+  <%= form_for [:admin, @team], remote: true do |f| %>
+    <%= f.label t "team.choose_leader" %>
+    <%= f.collection_radio_buttons :leader_id, @team.users, :id, :name do |r| %>
+      <tr>
+        <%= r.label do %>
+          <th><%= r.text %></th>
+          <th><%= r.radio_button %></th>
+        <% end %>
+      </tr>
+    <% end %>
+    <%= f.submit t("general.submit"), class: "btn btn-success" %>
+  <% end %>
+</div>

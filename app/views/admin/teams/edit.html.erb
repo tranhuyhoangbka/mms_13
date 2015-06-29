@@ -1,4 +1,8 @@
 <h1><%= t "team.title_edit" %></h1>
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8">
+  <%= content_tag :h3, "#{t "team.leader"}: #{@leader.name}", class: "leader" if @leader %> 
   <%= render "form" %>
+</div>
+<div class="col-md-2" id="select_leader">
+  <%= render "select_leader" %>
 </div>

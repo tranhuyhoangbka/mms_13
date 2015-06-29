@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
   has_many :project_users, dependent: :destroy
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
-  has_many :projects, through: :project_users
-  has_one :leading_team, foreign_key: "leader_id"
+  has_many :projects, through: :project_users  
   belongs_to :position
   belongs_to :team
   has_one :leader, foreign_key: "leader_id"
