@@ -9,6 +9,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
+    @positions = @user.positions.pluck(:name).join(", ")
     respond_to do |format|
       format.html
       format.csv {send_data @user.to_csv}
@@ -17,7 +18,7 @@ class Admin::UsersController < ApplicationController
 
   def new
     @user = User.new
-    @positions = Position.all   
+    @positions = Position.all
   end
 
   def create
@@ -52,7 +53,7 @@ class Admin::UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit :email, :name, :password, :password_confirmation,
-                                 :birthday, :position_id, :avatar
+                                 :birthday, :avatar, position_ids: []
   end
 
   def set_user

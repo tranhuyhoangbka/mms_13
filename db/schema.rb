@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626084829) do
+ActiveRecord::Schema.define(version: 20150627062824) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "action"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20150626084829) do
     t.datetime "updated_at",  null: false
     t.string   "object"
   end
+
+  create_table "position_users", force: :cascade do |t|
+    t.integer  "position_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "position_users", ["position_id"], name: "index_position_users_on_position_id"
+  add_index "position_users", ["user_id"], name: "index_position_users_on_user_id"
 
   create_table "positions", force: :cascade do |t|
     t.string   "name"
@@ -95,7 +105,6 @@ ActiveRecord::Schema.define(version: 20150626084829) do
     t.date     "birthday"
     t.string   "role",                   default: "user"
     t.integer  "team_id"
-    t.integer  "position_id"
     t.string   "encrypted_password",     default: "",     null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -111,7 +120,6 @@ ActiveRecord::Schema.define(version: 20150626084829) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["position_id"], name: "index_users_on_position_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["team_id"], name: "index_users_on_team_id"
 

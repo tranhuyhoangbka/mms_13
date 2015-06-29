@@ -18,11 +18,11 @@
       </tr>
       <tr>
         <th><%= t "team.team" %></th>
-        <td><%= @user.team.name if @user.team.present? %></td>
+        <td><%= @user.team.name if @user.team %></td>
       </tr>
       <tr>
         <th><%= t "position.position" %></th>
-        <td><%= @user.position.name if @user.position.present? %></td>
+        <td><%= @positions if @positions %></td>
       </tr>
       <tr>
         <th><%= t "user.joined_project" %></th>

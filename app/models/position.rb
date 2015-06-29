@@ -1,8 +1,9 @@
 class Position < ActiveRecord::Base
   include ActivityLog
   extend ExportCsv
-
-  has_many :users, dependent: :destroy
+  
+  has_many :position_users, dependent: :destroy
+  has_many :users, through: :position_users
 
   validates :name, presence: true, length: {maximum: Settings.models.position.
                                                               max_length_name}

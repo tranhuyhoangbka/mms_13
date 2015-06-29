@@ -5,30 +5,6 @@
     <%= f.label t "user.email" %>
     <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>  
-
-  <div class="field">
-    <%= f.label :name, t("user.fullname") %>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label t "user.birthday" %>
-    <%= f.date_select :birthday, use_month_numbers: true, 
-        user_two_digit_numbers: true, start_year: 1950, end_year: 2030 %>
-  </div>
-
-  <div class="field">
-    <%= f.label t "user.position" %>
-    <%= f.collection_select :position_id, @positions, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avatar, t("user.personal_photo") %>
-    <%= f.file_field :avatar %>
-  </div>
-
-  <div class="control">
-    <%= f.submit class: "btn btn-success" %>
-  </div>
+  <%= render "fields_user", f: f %>
 <% end %>
 

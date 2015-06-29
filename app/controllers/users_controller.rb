@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show    
     @team = @user.team
-    @position = @user.position
+    @positions = @user.positions.pluck(:name).join(", ")
     @projects = @user.projects.pluck(:name).join(", ")
     @skills = @user.skills.pluck(:name).join(", ")
   end

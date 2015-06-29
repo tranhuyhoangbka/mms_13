@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
   has_many :projects, through: :project_users
-  has_one :leading_team, foreign_key: "leader_id"
-  belongs_to :position
-  belongs_to :team
-  has_one :leader, foreign_key: "leader_id"
+  has_many :position_users, dependent: :destroy
+  has_many :positions, through: :position_users
+  has_one :leader, foreign_key: "leader_id"  
+  belongs_to :team  
   
   accepts_nested_attributes_for :skill_users, allow_destroy: true
 
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   def to_csv
     CSV.generate do |csv|
       csv << Settings.csv.user_column
-      csv << [name, email, birthday, position.name]
+      csv << [name, email, birthday, positions.pluck(:name).join(", ")]
       csv << Settings.csv.skill
       csv << self.skills.pluck(:name)
     end

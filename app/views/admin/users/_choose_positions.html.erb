@@ -1,0 +1,11 @@
+<h2><%= t "user.choose_position" %></h2>
+<table class="table">
+  <%= f.collection_check_boxes :position_ids, sources, :id, :name do |b| %>
+    <tr>
+      <%= b.label do %>
+        <th><%= b.text %></th>
+        <th><%= b.check_box %></th>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

@@ -89,6 +89,7 @@ en:
     placeholder_search: Enter key search
     joined_project: Joined Projects
     add_skill: Add Skills
+    choose_position: Choose Positions
   activity:
     destroy_success: Activity is deleted!
     with_id: With ID
