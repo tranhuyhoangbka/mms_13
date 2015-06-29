@@ -13,6 +13,10 @@ class Admin::ProjectsController < ApplicationController
   def show
     @team = @project.team
     @user = @project.leader
+    respond_to do |format|
+      format.html
+      format.csv {send_data @project.to_csv}
+    end
   end
 
   def new
