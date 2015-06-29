@@ -67,6 +67,8 @@ en:
     title_index: All Teams
     team: Team
     add_team: Add Team
+    leader: Team Leader
+    choose_leader: Choose Leader
   user:
     create_success: User is created !
     update_success: User is updated !
