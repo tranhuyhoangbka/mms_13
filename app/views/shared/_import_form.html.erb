@@ -1,0 +1,8 @@
+<%= form_tag admin_imports_path, method: :post, multipart: true do %>
+  <div>
+    <%= label_tag :file, t("csv.import") %>
+    <%= file_field_tag :file %>
+    <%= hidden_field_tag :model, model %>
+    <%= submit_tag t "general.submit" %>
+  </div>
+<% end %>
