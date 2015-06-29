@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :teams
     resources :users
     resources :projects
+    resources :imports, only: [:create]
   end
 
   resources :users, only: [:show, :update] do
