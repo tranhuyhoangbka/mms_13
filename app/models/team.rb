@@ -20,4 +20,12 @@ class Team < ActiveRecord::Base
       csv << users.pluck(:name)
     end
   end
+
+  def self.import_csv file
+    CSV.foreach file.path, headers: true, header_converters: :downcase do |row|
+      record = Team.find_by(name: row["team"]) || Team.new
+      record.attributes = row.to_hash.slice "team", "description"
+      record.save!
+    end
+  end
 end
