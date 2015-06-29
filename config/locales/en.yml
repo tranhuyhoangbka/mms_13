@@ -34,6 +34,7 @@ en:
     download: Download
     csv: CSV
     save : Save
+    select_lang: Select Language
   position:
     title_index: Create Position
     title_edit: Edit Position

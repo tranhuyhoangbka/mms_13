@@ -14,6 +14,7 @@
         <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %>"><%= message %></div>
         <% end %>
+        <%= render "layouts/select_language" %>
         <%= yield %>
       </div>
     </div>
