@@ -15,4 +15,13 @@ class Project < ActiveRecord::Base
   after_create :log_create
   after_update :log_update
   after_destroy :log_delete
+
+  def to_csv
+    CSV.generate do |csv|
+      csv << Settings.csv.project_column
+      csv << [name, abbreviation, start_date, end_date, team.name, leader.name]
+      csv << Settings.csv.member
+      csv << users.pluck(:name)
+    end
+  end
 end

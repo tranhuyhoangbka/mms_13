@@ -66,6 +66,7 @@ en:
     users_of_team: User List Of Team
     title_index: All Teams
     team: Team
+    add_team: Add Team
   user:
     create_success: User is created !
     update_success: User is updated !

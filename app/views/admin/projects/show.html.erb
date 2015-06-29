@@ -1,6 +1,8 @@
 <%= provide :title, @project.name %>
 <h1><%= @project.name %></h1>
 <div class="col-md-4">
+  <%= t "general.download" %>  
+  <%= link_to t("general.csv"), admin_project_path(format: :csv) %>
   <div id="content">
     <ul class="list_group">
       <li class="list-group-item list-group-item-info">

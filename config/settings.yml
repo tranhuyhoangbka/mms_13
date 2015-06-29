@@ -37,3 +37,10 @@ csv:
     - Name
     - Description
     - Leader
+  project_column:
+    - Name
+    - Short Name
+    - Start date
+    - End date
+    - Team
+    - Leader

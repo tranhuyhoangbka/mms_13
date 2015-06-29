@@ -1,6 +1,7 @@
 <div class="col-md-8 col-md-offset-2">
   <%= render "shared/import_form", model: Team %>
   <h1><%= t "team.title_index" %></h1>
+  <%= link_to t("team.add_team"), new_admin_team_path, class: "btn btn-success" %>
   <table class="table table-striped">
     <tr>
       <th><%= t "general.id" %></th>
