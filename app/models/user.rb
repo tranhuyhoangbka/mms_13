@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     define_method("is_#{role_key}?") {role == role_value}
   end
 
+  def self.get_id user_email
+    User.find_by(email: user_email).id
+  end
+
   def to_csv
     CSV.generate do |csv|
       csv << Settings.csv.user_column
