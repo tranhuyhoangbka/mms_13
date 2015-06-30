@@ -1,7 +1,4 @@
 class Admin::TeamsController < ApplicationController
-  before_action :admin_user
-  before_action :set_team, except: [:index, :new, :create]
-  
   def index
     @teams = Team.paginate page: params[:page], per_page: Settings.general.per_page
   end
@@ -54,9 +51,5 @@ class Admin::TeamsController < ApplicationController
   private
   def team_params
     params.require(:team).permit :name, :description, :leader_id, user_ids: []
-  end
-
-  def set_team
-    @team = Team.find params[:id]
   end
 end

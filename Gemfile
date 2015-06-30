@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "whenever", require: false
+gem "cancancan"
 gem "ransack"
 gem "rails_config"
 gem "devise"

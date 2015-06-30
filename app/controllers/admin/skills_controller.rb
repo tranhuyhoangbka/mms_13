@@ -1,9 +1,6 @@
 class Admin::SkillsController < ApplicationController
-  before_action :admin_user
-  before_action :set_skill, only: [:edit, :update, :destroy]
-
   def index
-    @skills = Skill.paginate page: params[:page], per_page: 
+    @skills = Skill.paginate page: params[:page], per_page:
                                    Settings.general.per_page
     @skill = Skill.new
     respond_to do |format|
@@ -43,9 +40,5 @@ class Admin::SkillsController < ApplicationController
   private
   def skill_params
     params.require(:skill).permit :name
-  end
-
-  def set_skill
-    @skill = Skill.find params[:id]
   end
 end
