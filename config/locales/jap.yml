@@ -1,0 +1,106 @@
+jap:
+  general:
+    logo: メンバー·マネージャー·システム
+    logo_admin: メンバー·マネージャーのシステム管理者
+    title: メンバー·マネージャー·システム
+    footer: Framgia 会社
+    menu_item_home: ホーム
+    menu_item_teams: チーム
+    menu_item_users: ユーザー
+    menu_item_positions: ポジション
+    menu_item_projects: プロジェクト
+    menu_item_skills: スキル
+    menu_item_about: 私たちに関しては
+    menu_item_contact: お問い合わせ
+    menu_item_log: ログインアクティビティ
+    login: ログイン
+    logout: ログアウト
+    profile: プロフィール
+    setting: 設定
+    create: 作ります
+    update: アップデート
+    id: ID
+    name: 名
+    edit: 編集
+    delete: 削除
+    confirm_delete: 本気ですか?
+    error: エラー
+    error_message: フォームが含まれています
+    not_admin: ごめんなさい！あなたが管理者（DBA）ではありません
+    description: 説明
+    stt: オーダー
+    email: メール
+    submit: 提出します
+    download: ダウンロード
+    csv: CSV
+    select_lang: 言語の選択
+  position:
+    title_index: ポジションの作成
+    title_edit: 編集位置
+    abbreviation: 略語
+    create_success: 位置が作成され!
+    create_not_success: 位置ではない成功を作成 !
+    update_success: 位置が更新されます !
+    position: ポジション
+  skill:
+    create_success: スキルが作成されます!
+    create_fail: スキルない成功を作成!
+    update_success: スキルが更新されます!
+    update_fail: 更新スキルない成功!
+    delete_success: スキルが削除されます!
+    create_skill: スキルを作成
+    all_skills: すべてのスキル
+    no_skill: いいえスキルが検索されていません!
+    title_edit: 編集スキル
+    level: レベル
+    name: スキル名
+    experience: 経験年
+  team:
+    team_list: チームリスト
+    user_list: ユーザー一覧
+    title_new: チームの作成
+    create_success: チームが作成されます !
+    update_success: 更新チームは成功です !
+    title_edit: 編集チーム
+    no_team_list: いいえチームユーザーリストはありません
+    users_of_team: チームのユーザーリスト
+    title_index: すべてのチーム
+    team: チーム
+  user:
+    create_success: ユーザーが作成されます !
+    update_success: ユーザーが更新されます !
+    update_fail: ユーザーは、スキルが失敗に追加します !
+    delete_success: ユーザーが削除されます !
+    title_new: ユーザーの作成
+    title_edit: ユーザーの編集
+    email: メールアドレス
+    password: パスワード
+    confirmation: 確認
+    fullname: フルネーム
+    birthday: 誕生日
+    position: ポジション
+    personal_photo: パーソナルフォト
+    destroy_success: チームが削除されます !
+    team: チーム
+    introduction: のご紹介
+    all_users: すべてのユーザー
+    add_user: ユーザーの追加
+    placeholder_search: 検索キーを入力してください
+    joined_project: 参加プロジェクト
+    add_skill: スキルを追加
+  activity:
+    destroy_success: アクティビティが削除されます!
+    with_id: IDを持ちます
+    history: 歴史
+    time: 時間
+    content: コンテンツ
+  date:
+    order:
+      - "year"
+      - "month"
+      - "day"
+  devise:
+    sessions:
+      signed_in: "正常に署名されました"
+      signed_out: "正常にサインアウト"
+      already_signed_out: "正常にサインアウト"  

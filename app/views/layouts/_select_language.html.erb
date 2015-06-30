@@ -1,0 +1,14 @@
+<div class="select-language pull-right">
+  <div class="clearfix"></div>
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+      <%= t "general.select_lang" %>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <% Settings.general.langs.each do |lang_key, lang_name| %>
+        <li><%= link_to lang_name, url_for(locale: lang_key) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

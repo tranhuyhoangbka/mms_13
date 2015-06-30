@@ -1,0 +1,106 @@
+vie:
+  general:
+    logo: HỆ THỐNG QUẢN LÝ NHÂN VIÊN
+    logo_admin: QUẢN TRỊ HỆ THỐNG QUẢN LÝ NHÂN VIÊN
+    title: Hệ thống quản lý nhân viên
+    footer: Công ty Framgia
+    menu_item_home: Trang chủ
+    menu_item_teams: Các nhóm
+    menu_item_users: Người dùng
+    menu_item_positions: Các vị trí
+    menu_item_projects: Các dự án
+    menu_item_skills: Các kỹ năng
+    menu_item_about: Về chúng tôi
+    menu_item_contact: Liên hệ với chúng tôi
+    menu_item_log: Lịch sử hoạt động
+    login: Đăng nhập
+    logout: Đăng xuất
+    profile: Trang cá nhân
+    setting: Thiết lập
+    create: Tạo mới
+    update: Cập nhật
+    id: Mã
+    name: Tên
+    edit: Sửa
+    delete: Xóa
+    confirm_delete: Bạn có chắc?
+    error: lỗi
+    error_message: Form chứa
+    not_admin: Xin lỗi! bạn không phải người quản trị hệ thống
+    description: Mô tả
+    stt: STT
+    email: Email
+    submit: Submit
+    download: Tải
+    csv: CSV
+    select_lang: Chọn ngôn ngữ
+  position:
+    title_index: Tạo vị trí
+    title_edit: Sửa vị trí
+    abbreviation: Viết tắt
+    create_success: Vị trí đã được tạo!
+    create_not_success: Tạo vị trí không thành công !
+    update_success: Vị trí được cập nhật !
+    position: Vị trí
+  skill:
+    create_success: Kỹ năng đã được tạo!
+    create_fail: Thêm kỹ năng không thành công!
+    update_success: Kỹ năng được cập nhật!
+    update_fail: Cập nhật kỹ năng không thành công!
+    delete_success: Kỹ năng được xóa!
+    create_skill: Tạo kỹ năng
+    all_skills: Tất cả kỹ năng
+    no_skill: Không có kỹ năng được tìm thấy!
+    title_edit: Sửa kỹ năng
+    level: Trình độ
+    name: Tên kỹ năng
+    experience: Số năm kinh nghiệm
+  team:
+    team_list: Danh sách nhóm
+    user_list: Danh sách người dùng
+    title_new: Tạo nhóm
+    create_success: Nhóm đã đượct tạo !
+    update_success: Cập nhật nhóm thành công !
+    title_edit: Sửa nhóm
+    no_team_list: Danh sách nhân viên chưa thuộc nhóm nào
+    users_of_team: Danh sách nhân viên của nhóm
+    title_index: Tất cả nhóm
+    team: Nhóm
+  user:
+    create_success: Người dùng được tạo thành công !
+    update_success: Người dùng được cập nhật !
+    update_fail: Người dùng thêm kỹ năng bị lỗi !
+    delete_success: Người dùng đã được xóa !
+    title_new: Tạo mới người dùng
+    title_edit: Sửa người dùng
+    email: email
+    password: Mật khẩu
+    confirmation: Xác nhận
+    fullname: Họ tên
+    birthday: Ngày sinh
+    position: Vị trí
+    personal_photo: Ảnh đại diện
+    destroy_success: Nhóm được xóa !
+    team: Nhóm
+    introduction: Giới thiệu của    
+    all_users: Tất cả người dùng
+    add_user: Thêm người dùng
+    placeholder_search: Nhập từ khóa
+    joined_project: Các dự án đã tham gia
+    add_skill: Thêm các kỹ năng
+  activity:
+    destroy_success: Hoạt động đã được xóa!
+    with_id: Với mã
+    history: Lịch sử
+    time: Thời gian
+    content: Nội dung
+  date:
+    order:
+      - "year"
+      - "month"
+      - "day"
+  devise:
+    sessions:
+      signed_in: "Đăng nhập thành công"
+      signed_out: "Đăng xuất thành công"
+      already_signed_out: "Đăng xuất thành công"

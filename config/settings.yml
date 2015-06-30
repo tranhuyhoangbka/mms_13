@@ -6,6 +6,10 @@ general:
     create: Create
     update: Update
     delete: Delete
+  langs:
+    en: English
+    vie: Vietnamese
+    jap: Japanese
 models:
   position:
     max_length_name: 150
