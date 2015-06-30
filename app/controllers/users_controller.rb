@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user
-
   def show    
     @team = @user.team
     @position = @user.position
@@ -24,10 +22,6 @@ class UsersController < ApplicationController
     params.require(:user).permit :name, :email, :password, :password_confirmation,
                                  :role, :avatar, :birthday, skill_ids: [], 
                                  skill_users_attributes: [:id, :user_id, :skill_id, :level,
-                                                             :experience_year, :_destroy]
-  end
-
-  def set_user
-    @user = User.find params[:id]
+                                                          :experience_year, :_destroy]
   end
 end

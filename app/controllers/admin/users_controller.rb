@@ -1,10 +1,7 @@
 class Admin::UsersController < ApplicationController
-  before_action :admin_user
-  before_action :set_user, except: [:index, :new, :create]  
-  
   def index
     @q = User.normal.ransack params[:q]
-    @users = @q.result.paginate page: params[:page], 
+    @users = @q.result.paginate page: params[:page],
                                 per_page: Settings.general.per_page
   end
 
@@ -17,7 +14,7 @@ class Admin::UsersController < ApplicationController
 
   def new
     @user = User.new
-    @positions = Position.all   
+    @positions = Position.all
   end
 
   def create
@@ -53,9 +50,5 @@ class Admin::UsersController < ApplicationController
   def user_params
     params.require(:user).permit :email, :name, :password, :password_confirmation,
                                  :birthday, :position_id, :avatar
-  end
-
-  def set_user
-    @user = User.find params[:id]
   end
 end

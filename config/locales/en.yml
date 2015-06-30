@@ -24,17 +24,17 @@ en:
     edit: Edit
     delete: Delete
     confirm_delete: Are you sure?
-    error: error
+    error: Rrror
     error_message: The form contains
-    not_admin: Sorry! you isn't Adminstrator
-    description: description
+    not_admin: Sorry! You aren't Adminstrator
+    description: Description
     stt: STT
     email: Email
     submit: Submit
     download: Download
     csv: CSV
     save : Save
-    select_lang: Select Language
+    select_lang: Select language
   position:
     title_index: Create Position
     title_edit: Edit Position

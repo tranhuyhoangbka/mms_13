@@ -1,6 +1,4 @@
 class Admin::ProjectsController < ApplicationController
-  before_action :admin_user
-  before_action :current_project, except: [:new, :index, :create]
   before_action :get_all_users, only: [:new, :edit, :update]
   before_action :get_all_teams, only: [:new, :edit]
 
@@ -55,10 +53,6 @@ class Admin::ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit :name, :abbreviation, :team_id,
                                     :leader_id, :start_date, :end_date, user_ids: []
-  end
-
-  def current_project
-    @project = Project.find params[:id]
   end
 
   def get_all_users
