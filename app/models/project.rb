@@ -24,4 +24,22 @@ class Project < ActiveRecord::Base
       csv << users.pluck(:name)
     end
   end
+
+  def self.import_csv file
+    attributes_hash = Hash.new{|hash, key| hash[key] = []}
+    CSV.foreach file.path, headers: true, header_converters: :downcase do |row|
+      t = row.to_hash.slice "name", "abbreviation", "start", "end", "member"
+      t.keys.each {|key| attributes_hash[key].push t[key] unless t[key].nil?}
+    end
+    attributes = Hash[name: attributes_hash["name"].first, 
+                      abbreviation: attributes_hash["abbreviation"].first,
+                      start_date: attributes_hash["start"].first,
+                      end_date: attributes_hash["end"].first,
+                      user_ids: attributes_hash["member"].map{|m| User.get_id m}]
+    begin
+      Project.find_by(name: attributes[:name]).update_attributes attributes
+    rescue
+      Project.create! attributes
+    end
+  end
 end
