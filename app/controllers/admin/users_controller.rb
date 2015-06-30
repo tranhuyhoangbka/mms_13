@@ -23,6 +23,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      Notifier.delay.create_user user_params
       flash[:success] = t "user.create_success"
       redirect_to admin_user_path(@user)
     else

@@ -103,4 +103,14 @@ jap:
     sessions:
       signed_in: "正常に署名されました"
       signed_out: "正常にサインアウト"
-      already_signed_out: "正常にサインアウト"  
+      already_signed_out: "正常にサインアウト"
+  csv:
+    import: インポートCSV
+    success: インポートに成功
+    fail: インポートに失敗しました。
+  mail:
+    subject: マネージャのメンバ·システムでのアカウント
+    hi: こんにちは
+    welcome: メンバーマネージャシステムへのウェルカム
+    purpose: 私たちはあなたのアカウントが作成されていることを確認するためにこのメールを書きます。
+    title_info: アカウントの情報

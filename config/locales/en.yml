@@ -109,3 +109,10 @@ en:
     import: Import CSV
     success: Import successfully
     fail: Failed to import
+  mail:
+    subject: Account in Manager Member System
+    hi: Hi
+    welcome: Wellcome to Member Manager System
+    purpose: We write this mail to notice you that your account is created.
+    title_info: Information of your account
+    link_login: Login System
