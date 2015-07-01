@@ -1,7 +1,7 @@
 class Admin::PositionsController < Admin::BaseAdminController
   def index
-    @positions = Position.paginate page: params[:page],
-                                   per_page: Settings.general.per_page
+    @positions = @positions.paginate page: params[:page],
+                                     per_page: Settings.general.per_page
     @position = Position.new
     respond_to do |format|
       format.html
@@ -10,16 +10,12 @@ class Admin::PositionsController < Admin::BaseAdminController
   end
 
   def create
-    @position = Position.new position_params
     if @position.save
       flash[:success] = t "position.create_success"
     else
       flash[:danger] = t "position.create_not_success"
     end
     redirect_to admin_positions_url
-  end
-
-  def edit
   end
 
   def update

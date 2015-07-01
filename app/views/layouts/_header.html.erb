@@ -33,7 +33,7 @@
         </ul>
       <% elsif user_signed_in? %>                      
         <ul class="nav navbar-nav">
-          <li><%= link_to t("general.menu_item_teams"), "#" %></li>
+          <li><%= link_to t("general.menu_item_teams"), teams_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">

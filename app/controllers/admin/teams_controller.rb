@@ -1,6 +1,7 @@
 class Admin::TeamsController < Admin::BaseAdminController
   def index
-    @teams = Team.paginate page: params[:page], per_page: Settings.general.per_page
+    @teams = @teams.paginate page: params[:page], 
+                             per_page: Settings.general.per_page
   end
 
   def show
@@ -11,12 +12,7 @@ class Admin::TeamsController < Admin::BaseAdminController
     end
   end
 
-  def new
-    @team = Team.new
-  end
-
   def create
-    @team = Team.new team_params
     if @team.save
       flash[:success] = t "team.create_success"
       redirect_to admin_team_path(@team)
@@ -34,7 +30,8 @@ class Admin::TeamsController < Admin::BaseAdminController
   def update
     if @team.update_attributes team_params
       respond_to do |format|
-        format.html {redirect_to admin_team_path(@team), notice: t("team.update_success")}
+        format.html {redirect_to admin_team_path(@team),
+                              notice: t("team.update_success")}
         format.js
       end
     else
