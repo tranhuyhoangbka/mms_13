@@ -1,0 +1,7 @@
+<h1><%= t "mail.hi" %> <%= @user[:name] %> !</h1>
+<p><%= t "mail.welcome" %></p>
+<p><%= t "mail.purpose" %></p>
+<h3><%= t "mail.title_info" %></h3>
+<p><%= t "general.email" %>: <%= @user[:email] %></p>
+<p><%= t "general.password" %>: <%= @user[:password] %></p>
+<p><%= t "mail.link_login" %>: <%= new_user_session_url %></p>

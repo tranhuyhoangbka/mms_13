@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "delayed_job_active_record"
 gem "whenever", require: false
 gem "cancancan"
 gem "ransack"
