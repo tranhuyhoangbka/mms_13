@@ -1,6 +1,6 @@
 class Admin::SkillsController < Admin::BaseAdminController
   def index
-    @skills = Skill.paginate page: params[:page], per_page:
+    @skills = @skills.paginate page: params[:page], per_page:
                                    Settings.general.per_page
     @skill = Skill.new
     respond_to do |format|
@@ -10,7 +10,6 @@ class Admin::SkillsController < Admin::BaseAdminController
   end  
 
   def create
-    @skill = Skill.new skill_params
     if @skill.save
       flash[:success] = t "skill.create_success"
     else

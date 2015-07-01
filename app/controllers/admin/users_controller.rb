@@ -13,12 +13,10 @@ class Admin::UsersController < Admin::BaseAdminController
   end
 
   def new
-    @user = User.new
     @positions = Position.all
   end
 
   def create
-    @user = User.new user_params
     if @user.save
       Notifier.delay.create_user user_params
       flash[:success] = t "user.create_success"

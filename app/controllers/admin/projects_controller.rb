@@ -18,12 +18,10 @@ class Admin::ProjectsController < Admin::BaseAdminController
   end
 
   def new
-    @project = Project.new
-    @users = User.order name: :desc
+    @users = User.normal.order name: :desc
   end
 
   def create
-    @project = Project.new project_params
     if @project.save
       flash[:success] = t "project.project_create"
       redirect_to admin_projects_path
