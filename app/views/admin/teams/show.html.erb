@@ -2,7 +2,8 @@
   <h2 class="text-center text-warning">
     <%= @team.name %> <%= t "team.team" %>
   </h2>
-  <%= t "general.download" %> <%= link_to t("general.csv"), admin_team_path(format: :csv) %>
+  <%= t "general.download" %>  
+  <%= link_to_if @team.leader, t("general.csv"), admin_team_path(format: :csv) %>
   <div class="description-team">
     <h3 class="text-warning">
       <%= t "team.introduction" %> <%= @team.name %> <%= t "team.team" %>
@@ -22,7 +23,10 @@
           <td><%= index + 1 %></td>
           <td><%= link_to user.name, "#" %></td>
           <td><%= user.email %></td>
-          <td><%= image_tag user.avatar.url, class: "img-responsive", size: "70x70" %></td>
+          <td>
+            <%= image_tag user.avatar.url, class: "img-responsive", 
+                                           size: Settings.general.size_image %>
+          </td>
         </tr>
       <% end %>
     </table>
