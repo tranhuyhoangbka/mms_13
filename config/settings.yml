@@ -49,3 +49,10 @@ csv:
     - End date
     - Team
     - Leader
+skills:
+  - Android
+  - IOS
+  - Java
+  - Ruby
+  - PHP
+  - C
