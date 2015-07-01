@@ -1,4 +1,6 @@
+<% provide :title, t("project.project_create") %>
 <div class="col-md-6 col-md-offset-3">
+  <h1><%= t "project.project_create" %></h1>
   <%= form_for [:admin, @project] do |f| %>
     <%= render "shared/error_messages", object: f.object %>
     <div class="field">

@@ -37,7 +37,8 @@ en:
     select_lang: Select language
     admin_only: You don't have permission
   position:
-    title_index: Create Position
+    title_index: All Position
+    create_position: Create Position
     title_edit: Edit Position
     abbreviation: Abbreviation
     create_success: Position is create!
