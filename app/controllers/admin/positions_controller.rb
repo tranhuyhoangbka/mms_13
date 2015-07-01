@@ -1,4 +1,4 @@
-class Admin::PositionsController < ApplicationController
+class Admin::PositionsController < Admin::BaseAdminController
   def index
     @positions = Position.paginate page: params[:page],
                                    per_page: Settings.general.per_page

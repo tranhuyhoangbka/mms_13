@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseAdminController
   def index
     @q = User.normal.ransack params[:q]
     @users = @q.result.paginate page: params[:page],
