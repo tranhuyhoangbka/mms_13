@@ -1,14 +1,20 @@
 <% provide :title, t("team.team_list") %>
-<h1><%= t "team.team_list" %></h1>
-<div class="col-sm-3 col-md-12">
+<div class="col-md-8 col-md-offset-2">
+  <h1><%= t "team.team_list" %></h1>
   <%= will_paginate %>
-  <ul class="list-group">
-    <% @teams.each do |team| %>
-      <li class="list-group-item list-group-item-info">
-        <b><%= link_to team.name, team_path(team) %></b> | 
-        <%= pluralize(team.users.count, "member", "members") %>
-      </li>
+  <table class="table table-striped">
+    <tr>
+      <th><%= t "general.stt" %></th>
+      <th><%= t "general.name" %></th>
+      <th></th>
+    </tr>
+    <% @teams.each_with_index do |team, index| %>
+      <tr>
+        <th><%= index + 1 %></th>
+        <th><%= link_to team.name, team_path(team) %></th>        
+        <th><%= pluralize team.users.count, "member" %></th>
+      </tr>
     <% end %>
-  </ul>
+  </table>
   <%= will_paginate %>
 </div>
