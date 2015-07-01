@@ -1,4 +1,4 @@
-class Admin::ProjectsController < ApplicationController
+class Admin::ProjectsController < Admin::BaseAdminController
   before_action :get_all_users, only: [:new, :edit, :update]
   before_action :get_all_teams, only: [:new, :edit]
 

@@ -1,4 +1,4 @@
-class Admin::TeamsController < ApplicationController
+class Admin::TeamsController < Admin::BaseAdminController
   def index
     @teams = Team.paginate page: params[:page], per_page: Settings.general.per_page
   end

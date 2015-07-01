@@ -1,4 +1,4 @@
-class Admin::ImportsController < ApplicationController
+class Admin::ImportsController < Admin::BaseAdminController
   def create
     begin
       params[:model].safe_constantize.import_csv params[:file]

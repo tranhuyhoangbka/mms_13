@@ -1,4 +1,4 @@
-class Admin::ActivitiesController < ApplicationController
+class Admin::ActivitiesController < Admin::BaseAdminController
   def index
     @activities = Activity.order(created_at: :desc).paginate page: params[:page],
                                                     per_page: Settings.general.per_page

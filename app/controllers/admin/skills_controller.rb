@@ -1,4 +1,4 @@
-class Admin::SkillsController < ApplicationController
+class Admin::SkillsController < Admin::BaseAdminController
   def index
     @skills = Skill.paginate page: params[:page], per_page:
                                    Settings.general.per_page
