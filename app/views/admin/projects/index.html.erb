@@ -2,7 +2,9 @@
 <div class="col-md-8 col-md-offset-2">
   <%= render "shared/import_form", model: Project %>
   <h1><%= t "project.project_list" %></h1>
-  <%= link_to t("project.project_create"), new_admin_project_path, class: "btn btn-success btn-lg" %>
+  <%= link_to t("project.project_create"), new_admin_project_path,
+                                           data: {no_turbolink: true},
+                                           class: "btn btn-success btn-lg" %>
   <div class="projects"> 
     <%= search_form_for [:admin, @q] do |f| %>  
       <%= f.label :team_name_cont %>

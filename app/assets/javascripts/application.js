@@ -13,4 +13,5 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require jquery-readyselector
 //= require_tree .

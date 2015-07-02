@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "static_pages#home"
+    get "projects/get_user_by_team/:team_id" => "projects#index"
+    
     resources :positions, except: [:show, :new]
     resources :skills, except: [:show, :new]
     resources :activities, only: [:index, :destroy]

@@ -7,7 +7,7 @@
     <%= render "layouts/shim" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <%= render "layouts/header" %>
     <div class="container" id="content">
       <div class="row">

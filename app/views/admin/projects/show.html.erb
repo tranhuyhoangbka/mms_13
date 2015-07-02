@@ -6,13 +6,13 @@
   <div id="content">
     <ul class="list_group">
       <li class="list-group-item list-group-item-info">
-        Abbreviation : <strong><%= @project.abbreviation %></strong>
+        <%= t "abbreviation" %> : <strong><%= @project.abbreviation %></strong>
       </li>
       <li class="list-group-item list-group-item-info">
-        Start date : <strong><%= @project.start_date %></strong>
+        <%= t "start" %> : <strong><%= @project.start_date %></strong>
       </li>
       <li class="list-group-item list-group-item-info">
-        End date : 
+        <%= t "end" %> : 
         <% if @project.end_date.nil? %>
           <strong>In progress</strong>
         <% else %>
@@ -22,11 +22,18 @@
       <li class="list-group-item list-group-item-info">
         Team : <strong><%= @team.name %></strong>
       </li>
-      <li class="list-group-item list-group-item-info">
-        Leader : <strong><%= @user.name %></strong>
-      </li>
-      <%= link_to "Edit", edit_admin_project_path(@project),
-                          class: "btn btn-warning" %>
+      <% if @user.present? %>
+        <li class="list-group-item list-group-item-info">
+          <%= t "leader" %> : <strong><%= @user.name %></strong>
+        </li>
+      <% end %>
+      <%= link_to t("general.edit"), edit_admin_project_path(@project),
+                                     data: {no_turbolink: true},
+                                     class: "btn btn-warning" %>
+      <%= link_to t("general.delete"), admin_project_path(@project),
+                                       method: :delete,
+                                       data: {confirm: t("general.confirm_delete")},
+                                       class: "btn btn-danger" %>
     </ul>
   </div>
 </div>
