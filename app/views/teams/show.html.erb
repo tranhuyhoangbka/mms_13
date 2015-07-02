@@ -1,14 +1,16 @@
 <% provide :title, @team.name %>
-<h1><%= @team.name %></h1>
-<h1><%= t "user_list" %></h1>
-<div class="col-sm-3 col-md-12">
-  <ul class="list-group">
-    <% @users.each do |user| %>
-      <li class="list-group-item list-group-item-info">
-        <b><%= link_to user.name, user_path(user) %></b> | 
-        <%= user.email %>
-      </li>
-    <% end %>
-  </ul>
+<h1 class="text-warning"><%= t "user_list" %></h1>
+<div class="col-md-8 col-md-offset-2">
+  <h3 class="text-warning"><%= @team.name %></h3>
+  <h3 class="text-warning">
+    <%= t "team.leader" %>:
+    <%= @team.leader.name if @team.leader %>
+  </h3>
+  <% @users.each do |user| %>
+    <div class="col-md-2">
+      <%= image_tag user.avatar, size: Settings.general.size_image %>
+      <%= link_to user.name, user %>
+    </div>
+  <% end %>
   <%= will_paginate @users %>
 </div>
