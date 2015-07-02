@@ -1,36 +1,35 @@
 <% provide :title, @user.name %>
-<div class="col-md-4">
-  <h1><%= t "general.profile" %></h1>
-  <ul class="list_group">
-    <li class="list-group-item list-group-item-info">
-      Name : <strong><%= @user.name %></strong>
-    </li>
-    <li class="list-group-item list-group-item-info">
-      Email : <strong><%= @user.email %></strong>
-    </li>
-    <li class="list-group-item list-group-item-info">
-      Birthday : <strong><%= @user.birthday %></strong>
-    </li>
-    <% if @position.present? %>
-      <li class="list-group-item list-group-item-info">
-        Position : <strong><%= @position.name %></strong>
-      </li>
-    <% end %>
-    <% if @team.present? %>
-      <li class="list-group-item list-group-item-info">
-        Team : <strong><%= @team.name %></strong>
-      </li>
-    <% end %>
-    <% if @projects.present? %>
-      <li class="list-group-item list-group-item-info">
-        Project : <strong><%= @projects %></strong>
-      </li>
-    <% end %>
-    <% if @skills.present? %>
-      <li class="list-group-item list-group-item-info">
-        Skills : <strong><%= @skills %></strong>
-      </li>
-    <% end %>
-  </ul>
+<div class="col-md-6 col-md-offset-3">
+  <h1 class="text-danger"><%= t "general.profile" %></h1>
+  <table class="table table-striped">
+    <tr>
+      <th><%= t "general.name" %></th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th><%= t "general.email" %></th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th><%= t "general.birthday" %></th>
+      <td><%= @user.birthday.strftime "%d-%m-%Y" %></td>
+    </tr>
+    <tr>
+      <th><%= t "position.position" %></th>
+      <td><%= @position.name %></td>
+    </tr>
+    <tr>
+      <th><%= t "team.team" %></th>
+      <td><%= @team.name if @team.present? %></td>
+    </tr>
+    <tr>
+      <th><%= t "general.menu_item_projects" %></th>
+      <td><%= @projects if @projects.present? %></td>
+    </tr>
+    <tr>
+      <th><%= t "general.menu_item_skills" %></th>
+      <td><%= @skills if @skills.present? %></td>
+    </tr>
+  </table>
   <%= link_to t("user.add_skill"), user_add_skill_path(@user), class:"btn btn-success" %>
 </div>
