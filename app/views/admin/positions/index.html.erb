@@ -1,7 +1,8 @@
+<% provide :title, t("position.title_index") %>
 <div class="col-md-8 col-md-offset-2">
   <%= render "shared/import_form", model: Position %>
   <div class="create_position col-md-4">
-    <h2><%= t "position.title_index" %></h2>
+    <h2><%= t "position.create_position" %></h2>
     <%= t "general.download" %>: 
     <%= link_to t("general.csv"), admin_positions_path(format: :csv) %>
     <%= render "form" %>
