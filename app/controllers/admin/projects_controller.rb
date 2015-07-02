@@ -1,11 +1,17 @@
 class Admin::ProjectsController < Admin::BaseAdminController
-  before_action :get_all_users, only: [:new, :edit, :update]
   before_action :get_all_teams, only: [:new, :edit]
 
   def index
-    @q = Project.ransack params[:q]
-    @projects = @q.result.paginate page: params[:page],
-                                   per_page: Settings.general.per_page
+    begin
+      @users = Team.find_by(id: params[:team_id]).users
+      respond_to do |format|
+        format.json  {render json: @users}      
+      end
+    rescue
+      @q = Project.ransack params[:q]
+      @projects = @q.result.paginate page: params[:page],
+                                     per_page: Settings.general.per_page
+    end
   end
 
   def show
@@ -15,10 +21,6 @@ class Admin::ProjectsController < Admin::BaseAdminController
       format.html
       format.csv {send_data @project.to_csv}
     end
-  end
-
-  def new
-    @users = User.normal.order name: :desc
   end
 
   def create
@@ -50,11 +52,7 @@ class Admin::ProjectsController < Admin::BaseAdminController
   private
   def project_params
     params.require(:project).permit :name, :abbreviation, :team_id,
-                                    :leader_id, :start_date, :end_date, user_ids: []
-  end
-
-  def get_all_users
-    @users = User.paginate page: params[:page]
+                                    :leader_id, :start_date, :end_date
   end
 
   def get_all_teams

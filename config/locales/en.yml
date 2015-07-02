@@ -107,6 +107,8 @@ en:
     project_create: Created project
     project_create: Create project
     project_need_atleast: Project need atleast a member
+    start: Start date
+    end: End date
   csv:
     import: Import CSV
     success: Import successfully

@@ -15,6 +15,7 @@ class Project < ActiveRecord::Base
   after_create :log_create
   after_update :log_update
   after_destroy :log_delete
+  after_save :assign_user_project
 
   def to_csv
     CSV.generate do |csv|
@@ -40,6 +41,14 @@ class Project < ActiveRecord::Base
       Project.find_by(name: attributes[:name]).update_attributes attributes
     rescue
       Project.create! attributes
+    end
+  end
+
+  private
+  def assign_user_project
+    unless users == team.users
+      project_users.destroy_all
+      users << team.users
     end
   end
 end
