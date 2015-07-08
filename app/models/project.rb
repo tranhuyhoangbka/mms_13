@@ -46,9 +46,12 @@ class Project < ActiveRecord::Base
 
   private
   def assign_user_project
-    unless users == team.users
-      project_users.destroy_all
-      users << team.users
+    begin
+      unless users == team.users
+        project_users.destroy_all
+        users << team.users
+      end
+    rescue
     end
   end
 end
