@@ -28,15 +28,17 @@ gem "jbuilder",             "2.2.3"
 gem "sdoc",                 "0.4.0", group: :doc
 
 group :development, :test do
-  gem "sqlite3",     "1.3.10"
-  gem "byebug",      "3.4.0"
-  gem "spring",      "1.1.3"
+  gem "sqlite3",               "1.3.10"
+  gem "byebug",                "3.4.0"
+  gem "spring",                "1.1.3"
+  gem "rspec-rails",           "3.1.0"
+  gem "factory_girl_rails",    "4.4.1"
+  gem "guard-rspec",           "4.3.1"
+  gem "spring-commands-rspec", "1.0.2"
 end
 
-group :test do
-  gem "minitest-reporters", "1.0.5"
-  gem "mini_backtrace",     "0.1.3"
-  gem "guard-minitest",     "2.3.1"
+group :test do  
+  gem "shoulda-matchers",   "2.6.2"
 end
 
 group :production do
