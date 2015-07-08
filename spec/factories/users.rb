@@ -1,7 +1,9 @@
 FactoryGirl.define do
   factory :user do
-    email Faker::Internet.email
-    name Faker::Name.name
+    association :position
+    
+    sequence(:email){|n| "example#{n}@gmail.com"}
+    sequence(:name){Faker::Name.name}
     birthday "1992-08-02"
     position_id {rand 1..5}
     password "123456789"
