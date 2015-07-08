@@ -19,7 +19,7 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "bcrypt",               "3.1.10"
 gem "bootstrap-sass",       "3.2.0.0"
 
-gem "sass-rails"        
+gem "sass-rails"
 gem "uglifier",             "2.5.3"
 gem "coffee-rails",         "4.1.0"
 gem "jquery-rails",         "4.0.0.beta2"
@@ -37,7 +37,7 @@ group :development, :test do
   gem "spring-commands-rspec", "1.0.2"
 end
 
-group :test do  
+group :test do
   gem "shoulda-matchers",   "2.6.2"
 end
 
