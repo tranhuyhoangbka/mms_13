@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe Admin::ProjectsController do
   login_admin
+  subject{response}
 
   describe "GET #index" do
     it "populates an array of project" do
@@ -11,7 +12,7 @@ describe Admin::ProjectsController do
     end
     it "renders the #index view" do
       get :index
-      expect(response).to render_template :index
+      is_expected.to render_template :index
     end
   end
   describe "GET #show" do
@@ -22,7 +23,7 @@ describe Admin::ProjectsController do
     end
     it "renders the #show view" do
       get :show, id: (create :project)
-      expect(response).to render_template :show
+      is_expected.to render_template :show
     end
   end
   describe "POST create" do
@@ -34,7 +35,7 @@ describe Admin::ProjectsController do
       end
       it "redirects to the new project" do
         post :create, project: attributes_for(:project)
-        expect(response).to redirect_to assigns Project.last
+        is_expected.to redirect_to assigns Project.last
       end
     end
     context "creates with invalid attributes" do
@@ -45,7 +46,7 @@ describe Admin::ProjectsController do
       end
       it "re-renders the create view" do
         post :create, project: attributes_for(:invalid_project)
-        expect(response).to render_template :new
+        is_expected.to render_template :new
       end
     end
   end
@@ -65,7 +66,7 @@ describe Admin::ProjectsController do
       end
       it "redirects to the updated project" do
         patch :update, id: project, project: attributes_for(:project)
-        expect(response).to redirect_to assigns project
+        is_expected.to redirect_to assigns project
       end
     end
     context "inserts invalid attributes" do
@@ -83,16 +84,23 @@ describe Admin::ProjectsController do
       it "re-renders the edit view" do
         patch :update, id: project, 
                        project: attributes_for(:invalid_project)
-        expect(response).to render_template :edit
+        is_expected.to render_template :edit
       end
     end
   end
   describe "DELETE destroy" do
     let(:project) {create :project}
 
+    it "deletes project" do
+      project
+      expect{
+        delete :destroy, id: project
+        }.to change(Project, :count).by -1
+    end
+
     it "redirects to index view" do
       delete :destroy, id: project
-      expect(response).to redirect_to admin_projects_path
+      is_expected.to redirect_to admin_projects_path
     end
   end
 end
