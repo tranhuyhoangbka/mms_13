@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :user do
     association :position
+    association :team
     
     sequence(:email){|n| "example#{n}@gmail.com"}
     sequence(:name){Faker::Name.name}
@@ -11,6 +12,10 @@ FactoryGirl.define do
     
     factory :admin do
       role "admin"
+    end
+
+    factory :invalid_user do
+      name nil
     end
   end
 end
