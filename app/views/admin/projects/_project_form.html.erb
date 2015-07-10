@@ -17,8 +17,10 @@
     <%= f.date_field :end_date, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :team_id %><br>
-    <%= f.collection_select :team_id, @teams, :id, :name, prompt: true %>
+    <% if @teams.present? %>
+      <%= f.label :team_id %><br>
+      <%= f.collection_select :team_id, @teams, :id, :name, prompt: true %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :leader_id %><br>
