@@ -1,7 +1,7 @@
 require "rails_helper"
 require "will_paginate/array"
 
-describe "admin/projects/index.html.erb" do
+describe "admin/projects/index.html.erb", type: :view do
   subject{rendered}
   login_admin
   before do
