@@ -15,7 +15,7 @@
         <th><%= t "general.name" %></th>
         <th colspan="2"></th>
       </tr>
-      <%= render @skills %>
+      <%= render partial: "skill", collection: @skills %>
     </table>
   <% else %>
     <h3><%= t "skill.no_skill" %></h3>
