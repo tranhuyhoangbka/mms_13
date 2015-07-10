@@ -39,7 +39,7 @@ end
 
 group :test do
   gem "capybara"
-  gem "shoulda-matchers",   "2.6.2"
+  gem "shoulda-matchers", "2.6.2"
 end
 
 group :production do

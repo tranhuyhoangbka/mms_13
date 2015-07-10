@@ -53,7 +53,7 @@
         </ul> 
       <% else %>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to t("general.login"), new_user_session_path %></li>
+          <li><%= link_to t("general.login"), new_user_session_path, id: "login" %></li>
         </ul>      
       <% end %>     
     </div>
