@@ -16,8 +16,8 @@
       <th colspan="2"></th>
     </tr>
     <div class="positions">
-      <%= render @positions %>
+      <%= render partial: "position", collection: @positions %>
     </div>    
   </table>
-  <%= will_paginate %>
+  <%= will_paginate @positions %>
 </div>
